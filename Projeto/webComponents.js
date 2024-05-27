@@ -434,12 +434,13 @@ customElements.define("check-item", CheckItem);
 const todoModalTemplate = document.createElement("template");
 todoModalTemplate.innerHTML=`
 
-
 <style>
-  @import url("system.css");
-
   :host {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 
   .overlay {
@@ -450,12 +451,12 @@ todoModalTemplate.innerHTML=`
     height: 100%;
     background-color: var(--color-text-dark);
     opacity: 85%;
-    z-index: 1; 
+    z-index: 1;
   }
 
   #add-container {
     position: relative;
-    z-index: 2; 
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -464,7 +465,6 @@ todoModalTemplate.innerHTML=`
     background-color: var(--color-primary);
     border-radius: 5px;
     padding: 20px;
-    margin: 40px auto;
   }
 
   .label {
@@ -480,54 +480,38 @@ todoModalTemplate.innerHTML=`
   }
 
   .button {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 40px;
+    width: 40px;
+    height: 30px;
     cursor: pointer;
-    border-radius: 5px;
+    margin: 10px;
   }
 
-  .button svg {
-    width: 20px;
-    height: 20px;
-    fill: white;
-  }
-
-  .button#cancel {
+  .button #cancel {
     background-color: red;
   }
 
-  .button#confirm {
+  .button #confirm {
     background-color: green;
   }
-
-
-
 </style>
-
-
 
 <div class="overlay"></div>
 <div id="add-container">
-
-    <label>Add Task</label>
-
-    <input placeholder="taskname">
-
-    <button id="cancel" > 
-        <svg width="100%" height="100%" viewBox="0 0 24.342 24.342" >
-            <path d="m12.171 8.4754-8.4754-8.4754-3.6954 3.6954 8.4754 8.4754-8.4754 8.4754 3.6954 3.6954 8.4754-8.4754 8.4754 8.4754 3.6954-3.6954-8.4754-8.4754 8.4754-8.4754-3.6954-3.6954z" clip-rule="evenodd" />
-        </svg>
+  <label class="label">Add Task</label>
+  <input class="input" placeholder="taskname">
+  <div style="display: flex; justify-content: space-between;">
+    <button class="button" id="cancel"> 
+      <svg width="100%" height="100%" viewBox="0 0 24.342 24.342" >
+        <path d="m12.171 8.4754-8.4754-8.4754-3.6954 3.6954 8.4754 8.4754-8.4754 8.4754 3.6954 3.6954 8.4754-8.4754 8.4754 8.4754 3.6954-3.6954-8.4754-8.4754 8.4754-8.4754-3.6954-3.6954z" clip-rule="evenodd" />
+      </svg>
     </button>
-        
-    <button id="confirm" >
-        <svg width="100%" height="100%" viewBox="0 0 24.342 24.342">
-            <path d="m20.497 2.6458 3.8447 3.865-15.105 15.185-9.2366-9.2856 3.8447-3.865 5.3919 5.4205z" clip-rule="evenodd" />
-        </svg>
+    <button class="button" id="confirm" >
+      <svg width="100%" height="100%" viewBox="0 0 24.342 24.342">
+        <path d="m20.497 2.6458 3.8447 3.865-15.105 15.185-9.2366-9.2856 3.8447-3.865 5.3919 5.4205z" clip-rule="evenodd" />
+      </svg>
     </button> 
+  </div>
 </div>
-
 
 `;
 
