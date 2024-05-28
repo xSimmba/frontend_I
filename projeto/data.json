@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Task 1",
+        "items": [
+            {
+                "title": "Item 1",
+                "checked": "false"
+            },
+            {
+                "title": "Item 2",
+                "checked": "false"
+            },
+            {
+                "title": "Item 3",
+                "checked": "false"
+            }
+        ]
+    }
+]
